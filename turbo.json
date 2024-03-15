@@ -1,0 +1,23 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"dev": {
+			"dependsOn": ["^build"],
+			"cache": false,
+			"persistent": true
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputMode": "new-only"
+		},
+		"start": {
+			"dependsOn": ["^build"],
+			"cache": false,
+			"persistent": true
+		},
+		"lint": {
+			"dependsOn": ["^build"],
+			"outputMode": "new-only"
+		}
+	}
+}
